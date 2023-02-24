@@ -1,4 +1,10 @@
 <%= @list.name %>
+<% @list.bookmarks.each do |bookmark| %>
+  <%= bookmark.movie.title %>
+  <img src= <%= bookmark.movie.poster_url %> alt="">
+<% end %>
 
 <br>
 <%= link_to "Add a bookmark",  new_list_bookmark_path(@list) %>
+
+<%= link_to "back to lists", lists_path %>

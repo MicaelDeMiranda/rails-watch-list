@@ -17,13 +17,14 @@ List.destroy_all
 Movie.destroy_all
 
 puts 'Creating movies...'
-movies['results'].each do |movie|
-  movie = Movie.create(
+movies['results'].sample(20).each do |movie|
+  movie = Movie.new(
     title: movie['title'],
     overview: movie['overview'],
     rating: movie['vote_average'].to_f,
     poster_url: "https://image.tmdb.org/t/p/w500#{movie['poster_path']}"
   )
+  movie.save
   puts "The movie #{movie.title} has been created"
 end
 

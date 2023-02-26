@@ -1,9 +1,12 @@
-<h1>All lists</h1>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
+  <div class="container">
+    <h1>Save any kind of movies</h1>
+    <h2>Genre</h2>
+  </div>
+</div>
 
-<ul>
-<% @lists.each do |list| %>
-<li><%= link_to list.name, list_path(list) %></li>
-<% end %>
-</ul>
-
-<%= link_to "create a new list", new_list_path %>
+<ol>
+  <% @lists.each do |list| %>
+    <li><%= link_to list.name, list_path(list) %></li>
+  <% end %>
+</ol>
